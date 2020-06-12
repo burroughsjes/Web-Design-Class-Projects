@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>Menu #1</title>
+        <link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+        <style type="text/css">
+            /* ================================================================ 
+            This copyright notice must be kept untouched in the stylesheet at 
+            all times.
+
+            The original version of this stylesheet and the associated (x)html
+            is available at http://www.cssplay.co.uk/menus/cssplay-bezier-curve-bounce-menu.html
+            Copyright (c) Stu Nicholls. All rights reserved.
+            This stylesheet and the associated (x)html may be modified in any 
+            way to fit your requirements.
+            =================================================================== */
+            body{
+                background-color:#ffd8d8;
+                font-family: 'Sacramento';
+            }
+            .cssplay-menu {
+                width:0; 
+                height:0; 
+                margin:25% auto; 
+                position:relative;
+                transform: translate3d(0,0,0);
+            }
+            .cssplay-menu .segment {
+                width:150%; 
+                height:150%; 
+                border-radius:100%; 
+                position:absolute; 
+                left:0; 
+                top:0; 
+                margin-left:-150%; 
+                margin-top:-150%; 
+                z-index:100;
+                transform:scale(0);
+            }
+            .cssplay-menu .segment label {
+                display:block; 
+                width:95px; 
+                height:100px; 
+                background:#008080; 
+                position:absolute; 
+                left:0; 
+                top:0; 
+                border:1px solid #fff; 
+                cursor:pointer;
+                transform-origin:left top;
+                transition: 0.25s cubic-bezier(0,0,1,1);
+            }
+            .cssplay-menu .segment label span {
+                display:block; 
+                width:35px; 
+                height:35px; 
+                position:absolute; 
+                left:0; 
+                top:0; 
+                right:15px; 
+                bottom:10px; 
+                margin:auto; 
+                background-position:center center; 
+                background-repeat:no-repeat;}
+            .cssplay-menu .segment label:nth-of-type(1) {
+                transform:rotate(0deg) skewY(30deg);
+            }
+            .cssplay-menu .segment label:nth-of-type(2) {
+                transform:rotate(120deg) skewY(30deg);
+            }
+            .cssplay-menu .segment label:nth-of-type(3) {
+                transform:rotate(240deg) skewY(30deg);
+            }
+
+            .cssplay-menu .segment label:nth-of-type(1) span {
+                background: url(images/menu2.png);
+                transform:skewY(-25deg) rotate(0deg);
+            }
+            .cssplay-menu .segment label:nth-of-type(2) span {
+                background: url(images/menu3.png);
+                transform:skewY(-25deg) rotate(-120deg); 
+            }
+            .cssplay-menu .segment label:nth-of-type(3) span {
+                background: url(images/home.png);
+                transform:skewY(-25deg) rotate(-240deg); 
+            }
+            .cssplay-menu .center {
+                display:block; 
+                width:64px; 
+                height:64px; 
+                border-radius:100%; 
+                background:#8b0000 url(images/heart.png) no-repeat center center; 
+                overflow:hidden; 
+                cursor:pointer; 
+                position:absolute; 
+                z-index:200; 
+                left:0; 
+                top:0; 
+                margin-left:-32px; 
+                top:-32px; 
+                box-shadow:0 0 0 2px #fff;
+            }
+            .cssplay-menu .holder {
+                width:0; height:0; position:absolute; top:0; left:0;
+            } 
+            .cssplay-menu .holder input {
+                position:absolute; display:none;
+            }
+
+            .cssplay-menu #toggle:checked + .segment {
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5);
+                transform:scale(1);
+            }
+            .cssplay-menu #toggle:checked ~ .center {
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5);
+                transform:scale(1.2);
+            }
+            .cssplay-menu #toggle:checked ~ .curve-upper {
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5);
+                transform:scale(1);
+            }
+            .cssplay-menu #toggle:checked ~ .curve-lower {
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5);
+                transform:scale(1);
+            }
+            .cssplay-menu #c1:checked ~ .segment label:nth-of-type(1),
+            .cssplay-menu #c2:checked ~ .segment label:nth-of-type(2),
+            .cssplay-menu #c3:checked ~ .segment label:nth-of-type(3) {background:#eb8c00;}
+
+            .cssplay-menu #c1:checked ~ #toggle:checked ~ .curve-lower {transform:rotate(0deg)}
+            .cssplay-menu #c2:checked ~ #toggle:checked ~ .curve-lower {transform:rotate(120deg)}
+            .cssplay-menu #c3:checked ~ #toggle:checked ~ .curve-lower {transform:rotate(240deg)}
+            
+            .cssplay-menu .sub {
+                width:300px; height:0; 
+                overflow:hidden; 
+                position:absolute; 
+                left:-200px; 
+                top:100px;
+            }
+            .cssplay-menu .sub dl {
+                padding:10px; 
+                margin:40px; 
+                width:300px; 
+                position:absolute; 
+                top:-190px; 
+                left:0;
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5);
+            }
+            .cssplay-menu .sub dl dt {
+                text-align:center; 
+                font:bold 30px 'Sacramento', arial, sans-serif; color:#8b0000;
+            }
+            .cssplay-menu #c1:checked ~ #toggle:checked ~ .sub dl:nth-of-type(1),
+            .cssplay-menu #c2:checked ~ #toggle:checked ~ .sub dl:nth-of-type(2),
+            .cssplay-menu #c3:checked ~ #toggle:checked ~ .sub dl:nth-of-type(3) {
+                top:20px;
+                transition: 0.5s cubic-bezier(.58,3,0.5,0.5) 0.5s;
+            } 
+            .cssplay-menu #c1:checked ~ #toggle:checked ~ .sub,
+            .cssplay-menu #c2:checked ~ #toggle:checked ~ .sub,
+            .cssplay-menu #c3:checked ~ #toggle:checked ~ .sub {height:250px} 
+            a:link {
+                color:#9C3F3F;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            a:visited {
+                color:#8b0000;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style = "color:#8b0000; font-size: 50px; border:solid; padding-top: 15px; padding-bottom: 15px; padding-left: 15px;">Welcome to Menu 1!</h1><br>
+        <p style = "font-family:'Bubbler One'; color:#8b0000; font-size: 35px; margin-left:30px; margin-right:30px">This menu took me quite a while to edit! Originally, it was a circle divided into 8 parts, but now it's 3 separate quadrilaterals. Please scroll all the way down to get the full effect. Click on the icons or blue area to where you want.</p>
+        <p style = "font-family:'Bubbler One'; color:#8b0000; font-size: 35px; margin-left:30px; margin-right:30px">Here you go:</p><br>
+        <div class="cssplay-menu" style = "border-style:dashed">
+	       <div class="holder">
+		      <input type="radio" id="c1" name="segment" checked="checked">
+		      <input type="radio" id="c2" name="segment">
+		      <input type="radio" id="c3" name="segment">
+		      <input type="checkbox" id="toggle">
+		          <div class="segment">
+			         <label for="c1"><a href = "cssmenu2.html"><span></span></a></label>
+                     <label for="c2"><a href = "cssmenu3.html"><span></span></a></label>
+			         <label for="c3"><a href = "../burroughsAssignments/burroughsAssignments.html"><span></span></a></label>
+		          </div>
+		      <div class="curve-lower"><div class="curve"></div></div>
+		      <div class="curve-upper"></div>
+		      <label for="toggle" class="center"></label>
+		      <div class="sub">
+			     <dl>
+                     <dt><a href = "cssmenu2.html">Menu  #2</a></dt>
+			     </dl>
+			     <dl>
+				    <dt><a href = "cssmenu3.html">Menu #3</a></dt>
+			     </dl>
+			     <dl>
+				    <dt><a href = "../burroughsAssignments.html">Assignments</a></dt>
+			     </dl>
+		      </div>
+	       </div>
+        </div>
+    </body>
+</html>

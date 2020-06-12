@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <title>The Yelm Art Museum</title>
+        <link href='https://fonts.googleapis.com/css?family=Vollkorn SC' rel='stylesheet'>
+        <style>
+            body {
+                background-color: #F4D6BC;
+            }
+            h3 {
+                color: #c60; 
+                padding-bottom: 30px;
+                border-bottom-style: solid;
+                border-bottom-width: 5px;
+                letter-spacing: 0.5px;
+                line-height: 59px;
+            }
+            /* css variable */
+            #sn_slide_outer {--sn_color:#c60;}
+
+            /* slide styles and set up height of images */
+            #sn_slide_outer {width:100%; max-width:750px; min-width:320px; position:relative; margin:60px auto; background:#fff;}
+            #sn_slide_outer #sn_slide_pad {width:100%; height:0; padding-top:50%;}
+            #sn_slide_outer #sn_slideshow {position:absolute; left:0; top:0; width:100%; height:0; padding-top:50%; overflow:hidden;}
+            #sn_slide_outer #sn_slideshow img {display:block; width:100%; opacity:0; position:absolute; left:0; top:0; z-index:10; transition:2s; transform:scale(2);}
+
+            /* hide inputs */
+            input[name="sn_slideshow"] {display:none;}
+
+            /* slide animation */
+            #sn_play:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(1) {animation:sn_play 25s infinite 0s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(2) {animation:sn_play 25s infinite 5s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(3) {animation:sn_play 25s infinite 10s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(4) {animation:sn_play 25s infinite 15s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(5) {animation:sn_play 25s infinite 20s;}
+
+            @keyframes sn_play {
+                0%,27.5%,100% {opacity:0; transform:scale(2); z-index:10;}
+                7.5%,20% {opacity:1; transform:scale(1); z-index:5;} 
+            }
+
+            /* arrows and buttons click/tap image action */
+            #sn_slide01:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(1), 
+            #sn_slide02:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(2),
+            #sn_slide03:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(3), 
+            #sn_slide04:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(4),
+            #sn_slide05:checked ~ #sn_slide_outer #sn_slideshow img:nth-of-type(5) {opacity:1; transform:scale(1); z-index:5;}
+
+            /* buttons styles */
+            #sn_slide_outer #sn_bullets {position:absolute; left:0; bottom:50px; width:100%; text-align:center; font-size:0; z-index:100;}
+            #sn_slide_outer #sn_bullets label {display:inline-block; vertical-align:middle; width:12px; height:12px; border:1px solid #c60; margin:0 5px; border-color:var(--sn_color);}
+
+            /* buttons animation highlight action */
+            #sn_play:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(1) {animation:sn_bullets 25s steps(1) infinite 0s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(2) {animation:sn_bullets 25s steps(1) infinite 5s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(3) {animation:sn_bullets 25s steps(1) infinite 10s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(4) {animation:sn_bullets 25s steps(1) infinite 15s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(5) {animation:sn_bullets 25s steps(1) infinite 20s;}
+
+            @keyframes sn_bullets {
+                0% {background:#c60; background:var(--sn_color);}
+                20%,100% {background:transparent;}
+            }
+
+            /* thumbnail images on bullet hover styles */
+            #sn_slide_outer #sn_bullets label img {display:block; width:120px; position:absolute; left:50%; margin-left:-61px; bottom:30px; border:1px solid #c60; border-color:var(--sn_color); z-index:100; opacity:0; transform:scale(0); transition:0.5s;}
+            #sn_slide_outer #sn_bullets label:hover img {opacity:1; transform:scale(1);}
+
+            /* buttons click/tap highlight action */
+            #sn_slide01:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(1),
+            #sn_slide02:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(2),
+            #sn_slide03:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(3),
+            #sn_slide04:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(4),
+            #sn_slide05:checked ~ #sn_slide_outer #sn_bullets label:nth-of-type(5) {background:#c60; background:var(--sn_color);}
+
+            /* left, right arrows and play, pause control styles */
+            #sn_slide_outer #sn_arrows {width:100%; height:45px; text-align:center; position:relative; overflow:hidden; font-size:0;}
+            #sn_slide_outer #sn_arrows span {position:absolute; top:10px; left:100%; width:100%;}
+            #sn_slide_outer #sn_arrows span label:nth-of-type(1) {display:inline-block; vertical-align:middle; width:14px; height:14px; border-top:6px solid #c60; border-left:6px solid #c60; transform:rotate(-45deg); margin:0 5px; border-color:var(--sn_color);}
+            #sn_slide_outer #sn_arrows span label:nth-of-type(2) {display:inline-block; vertical-align:middle; width:0; height:0; border-left:22px solid #c60;border-top:14px solid transparent; border-bottom:14px solid transparent; margin:0 5px; border-left-color:var(--sn_color);}
+            #sn_slide_outer #sn_arrows span label:nth-of-type(3) {display:inline-block; vertical-align:middle; width:6px; height:28px; border-left:8px solid #c60; border-right:8px solid #c60; margin:0 5px; border-color:var(--sn_color);}
+            #sn_slide_outer #sn_arrows span label:nth-of-type(4) {display:inline-block; vertical-align:middle; width:14px; height:14px; border-top:6px solid #c60; border-right:6px solid #c60; transform:rotate(45deg); margin:0 5px; border-color:var(--sn_color);}
+
+            /* left, right arrows and play, pause animation */ 
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(1) {animation:sn_arrows 25s steps(1) infinite 0s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(2) {animation:sn_arrows 25s steps(1) infinite 5s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(3) {animation:sn_arrows 25s steps(1) infinite 10s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(4) {animation:sn_arrows 25s steps(1) infinite 15s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(5) {animation:sn_arrows 25s steps(1) infinite 20s;}
+
+            #sn_play:checked ~ #sn_slide_outer #sn_arrows span label:nth-of-type(2) {display:none;}
+
+            @keyframes sn_arrows {
+                0% {left:0;}
+                20%,100% {left:100%}
+            }
+
+            /* left, right arrows and play, pause click/tap action */
+            #sn_slide01:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(1),
+            #sn_slide02:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(2),
+            #sn_slide03:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(3),
+            #sn_slide04:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(4),
+            #sn_slide05:checked ~ #sn_slide_outer #sn_arrows span:nth-of-type(5) {left:0;}
+            input[id*="sn_slide"]:checked ~ #sn_slide_outer #sn_arrows span label:nth-of-type(3) {display:none;}
+
+            /* captions styles */
+            #sn_slide_outer #sn_captions {width:100%; height:40px; text-align:center; position:absolute; left:0; width:100%; top:-50px;}
+            #sn_slide_outer #sn_captions p {padding:0; margin:0; position:absolute; left:0; top:0; width:100%; text-align:center;}
+            #sn_slide_outer #sn_captions p span {display:inline-block; position:relative; z-index:5; padding:0 20px; font:15px 'Open Sans Condensed', arial, sans-serif; color:#c60; color:var(--sn_color); background:#fff; border:1px solid #c60; transition:2s; transform:scale(0);  border-color:var(--sn_color); border-radius:2px;}
+
+            /* captions animation */
+            #sn_play:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(1) span {animation:sn_captions 25s infinite 0s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(2) span {animation:sn_captions 25s infinite 5s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(3) span {animation:sn_captions 25s infinite 10s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(4) span {animation:sn_captions 25s infinite 15s;}
+            #sn_play:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(5) span {animation:sn_captions 25s infinite 20s;}
+
+            @keyframes sn_captions {
+                0%,24%,100% {transform:scale(0); z-index:5;}
+                7.5%,20% {transform:scale(1); z-index:10;}
+            }
+
+            /* captions styles when click/tapping controls and buttons */
+            #sn_slide01:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(1) span,
+            #sn_slide02:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(2) span,
+            #sn_slide03:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(3) span,
+            #sn_slide04:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(4) span,
+            #sn_slide05:checked ~ #sn_slide_outer #sn_captions p:nth-of-type(5) span {z-index:10; transform:scale(1);}
+            
+                        #menu {margin:50px 0;}
+            #menu dl {width: 150px; margin: 0 auto; padding: 0 0 10px 0; background: #69c url(bottom.gif) no-repeat bottom left;}
+            #menu dt {margin:0; padding: 10px; font-size: 1.1em; font-weight:bold; color: #fff; border-bottom:1px solid #fff; background: #69c url(top.gif) no-repeat top left;}
+            #menu dd {margin:0; padding:0; color: #fff; font-size: 1em; border-bottom:1px solid #fff; background: #47a;}
+            #gallery a, #gallery a:visited {color:#fff; text-decoration:none; display:block; padding:5px 5px 5px 20px;
+                background: #47a url(arrow.gif) no-repeat 10px 10px; width:125px;
+            }
+            #gallery a:hover {background: #258 url(arrowr.gif) no-repeat 11px 10px; color:#9cf;}
+            ol li {font-size:11px;}
+        </style>
+    </head>
+    <body>
+        <h3 class="information" style="font-family: 'Vollkorn SC', arial, sans-serif; font-size: 150%; padding-top: 15px; padding-left: 40px">The<br> <span style = "font-size:350%">Yelm</span><br>Art Museum</h3><br>
+
+	   <input type="radio" name="sn_slideshow" id="sn_play" checked="checked">
+	   <input type="radio" name="sn_slideshow" id="sn_slide01">
+	   <input type="radio" name="sn_slideshow" id="sn_slide02">
+	   <input type="radio" name="sn_slideshow" id="sn_slide03">
+	   <input type="radio" name="sn_slideshow" id="sn_slide04">
+	   <input type="radio" name="sn_slideshow" id="sn_slide05">
+	   <div id="sn_slide_outer">
+		  <div id="sn_slide_pad"></div>
+		  <div id="sn_slideshow">
+			 <img src="images/americanProgress.jpeg" alt="">
+			 <img src="images/raftOfMedusa.jpeg" alt="">
+			 <img src="images/montmarteGarden.jpeg" alt="">
+			 <img src="images/crowingJosephine.jpeg" alt="">
+			 <img src="images/japan.jpeg" alt="">
+		  </div>
+		<div id="sn_bullets">
+			 <label for="sn_slide01"><img src="images/americanProgress.jpeg" alt=""></label>
+			 <label for="sn_slide02"><img src="images/raftOfMedusa.jpeg" alt=""></label>
+			 <label for="sn_slide03"><img src="images/montmarteGarden.jpeg" alt=""></label>
+			 <label for="sn_slide04"><img src="images/crowingJosephine.jpeg" alt=""></label>
+			 <label for="sn_slide05"><img src="images/japan.jpeg" alt=""></label>
+		</div>
+		<div id="sn_arrows">
+			 <span><label for="sn_slide05"></label><label for="sn_play"></label><label for="sn_slide01"></label><label for="sn_slide02"></label></span>
+			 <span><label for="sn_slide01"></label><label for="sn_play"></label><label for="sn_slide02"></label><label for="sn_slide03"></label></span>
+			 <span><label for="sn_slide02"></label><label for="sn_play"></label><label for="sn_slide03"></label><label for="sn_slide04"></label></span>
+			 <span><label for="sn_slide03"></label><label for="sn_play"></label><label for="sn_slide04"></label><label for="sn_slide05"></label></span>
+			 <span><label for="sn_slide04"></label><label for="sn_play"></label><label for="sn_slide05"></label><label for="sn_slide01"></label></span>
+		</div>
+		<div id="sn_captions">
+			 <p><span>America Progress (1872)<br>By John Gast</span></p>
+			 <p><span>The Raft of Medusa (1818-1819)<br>By Théodore Géricault</span></p>
+			 <p><span>A Garden in Montmartre (1880-1890)<br>By Pierre-Auguste Renoir</span></p>
+			 <p><span>Napoleon Crowning Josephing (1808)<br>By Jacques-Louis David</span></p>
+			 <p><span>Shipping off the Fujijama, Japan in early Morning Light<br>By Fritz Melbye</span></p>
+		</div>
+	</div>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+/* Jessica Burroughs
+   */
+	
+body {
+    text-align: justify;
+    color: #002633;
+	background-color: #F7FDFF;
+    font-family: 'Fauna One';
+	  }
+
+
+.colorOne {
+    background-color: #002633;
+}
+.colorTwo { 
+    background-color: #007EA7;
+}
+
+
+/*  These are the Navigation Links in the bar:  'Our Trainers,' "the Gym," etc  */
+#navigation a {
+    padding-left: 20px;
+	color: #50DAFC;
+    text-decoration: none;
+	           }
+#navigation a:hover {
+    text-decoration: underline;
+}
+#navigation a:visited {
+	color: #5BBFD8;
+}
+
+
+/* Code for non-navigation links on the page  */	
+a {
+	color: #50DAFC;
+    text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+    color: #5BBFD8;
+}
+
+	
+/* for "Metropolis Gym" */
+.logo {
+    color: #F7FDFF;
+    font-family: 'Gruppo';
+    font-size: 40px;
+}
+
+
+/*  for "Reach your Potential Here"   */	
+.tagline {
+    font-size: 15px;
+}
+.bodyText {
+    padding-left: 60px;
+}
+
+
+/*  for "A Workout Plan Just for You"   */
+.pageName {
+    font-size: 25px;
+    padding-left: 60px;
+    font-family: 'Fauna One';
+}

@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>CSS Positioning</title>
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Nixie One' rel='stylesheet'>
+        <style type = "text/css">
+            body {
+                color: #E98911;
+                /*color: #FF9C1D;*/
+                background-image: url('images/pinkbg.jpeg'); /*fix this later*/
+                font-family: 'Nixie One';
+                /*background-color: #ffbfc4;*/
+                /*background-color: #E9979E;*/
+            }
+            #box1 {
+                /*background-color: #82C09A;*/
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 900px;
+                height: 200px;
+            }
+            #box2 {
+                /*background-color: #82C09A;*/
+                position: absolute;
+                top: 250px;
+                left: 20px;
+                width: 200px;
+                height: 400px;
+            }
+            #box3 {
+                /*background-color: #ffbfc4;*/
+                position: absolute;
+                top: 250px;
+                left: 280px;
+                width: 680px;
+                height: 400px;
+                overflow-y: scroll;
+            }
+            #h1 {
+                color: #FF9C1D;
+                font-weight: bold;
+                padding-top: 20px;
+                padding-left: 20px;
+                font-size: 60px;
+                font-family: 'Sofia'
+            }
+            #h3 {
+                text-align: center;
+                padding-bottom: 15px;
+                border-bottom-style: solid;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            a:link, a:visited {
+                font-size: 14px;
+                background-color: #82C09A;
+                color: #E98911;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover, a:active {
+                background-color: #58834E;
+            }
+            p {
+                font-family: 'Nixie One';
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "box1">
+            <h1 id = "h1"><img src = "images/mintTea.png">  Chai's Healing Tea Shop</h1>
+        </div>
+        <div id = "box2">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="center"><a href = "../burroughsAssignments/burroughsAssignments.html" style = "letter-spacing: 1.8px;">My Assignments</a></td>
+                </tr>
+                <tr>
+                    <td align="center"><a href = "cssAbsolutePositioning.html">Absolute Positioning</a></td>
+                </tr>
+                <tr>
+                    <td align="center"><a href = "../cssCenterPositioning/CSSElastic.html" style = "letter-spacing: 0.8px;">Elastic Positioning</a></td>
+                </tr>
+            </table>	
+        </div>
+        <div id = "box3">
+            <h3 id = "h3">WELCOME</h3>
+            <img src = "images/tea.jpg!d" width = "80%" height = "80%" style = "margin-left: 50px;">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam augue, mattis a ante vitae, porta tincidunt mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus, purus et placerat porttitor, eros turpis porta lectus, tincidunt varius magna nisi eu ligula. Donec nibh libero, ullamcorper et placerat eu, vulputate ac justo. Praesent id malesuada sapien, in mollis tortor. Nam auctor in ante eu finibus. Nullam consequat, ligula et convallis faucibus, erat tortor vehicula purus, vitae venenatis ante massa id ligula. Donec dapibus at libero sed posuere. Cras non risus ut leo tristique convallis sit amet et dolor. Ut aliquet leo eget mauris imperdiet, id pulvinar libero congue. Nunc nec diam libero. Duis mollis condimentum nunc vitae efficitur. Fusce ut hendrerit dolor, quis vehicula libero. Etiam nisi sapien, elementum a arcu ultricies, consectetur malesuada erat. In hac habitasse platea dictumst.
+            </p>
+            <p>
+                Nunc ullamcorper felis nunc, vitae gravida lectus maximus a. Nam porttitor arcu id lacus faucibus cursus eleifend semper quam. Curabitur ornare, justo ac rutrum tincidunt, nunc eros molestie dui, eu sagittis sem sapien eu erat. In sit amet egestas libero, a scelerisque eros. Nullam et odio nulla. Phasellus ac massa orci. Maecenas vitae magna imperdiet nibh porta ullamcorper.
+            </p>
+            <p>
+                Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur id velit pretium, hendrerit arcu sit amet, interdum orci. Cras urna odio, eleifend eu neque vel, lacinia tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam sem enim, fermentum et neque vel, hendrerit imperdiet leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam tempus nibh arcu. Integer non leo ligula. Etiam mi massa, rhoncus eget scelerisque nec, rhoncus eget felis. Phasellus maximus, lacus ac rutrum placerat, ligula felis fermentum quam, eu porta odio ipsum quis ligula. Maecenas accumsan velit at diam pharetra iaculis. Cras in tincidunt libero, mattis posuere arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+            </p>
+            <p>
+                Donec eros ex, euismod eget ullamcorper nec, scelerisque eu enim. Donec quis mattis ipsum. Donec pellentesque, ante nec ullamcorper feugiat, lacus turpis euismod velit, non mattis arcu tortor vitae orci. Integer elit massa, blandit non porta at, venenatis vel lectus. Donec libero diam, gravida nec dapibus bibendum, tincidunt ut leo. Fusce convallis lacus ut augue ullamcorper aliquet. Nunc porta finibus dui in iaculis. Praesent efficitur, augue ut gravida blandit, mauris lorem consequat neque, quis rutrum leo enim ut leo. Pellentesque nec blandit neque. Donec purus eros, malesuada a faucibus id, ultricies sed orci. Praesent sit amet euismod erat. Nam in aliquam elit.
+            </p>
+        </div>
+    </body>
+</html>

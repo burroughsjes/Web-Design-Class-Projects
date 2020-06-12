@@ -1,0 +1,82 @@
+/* Jessica Burroughs
+   */
+	
+body {
+    text-align:justify;
+	background-color: #FFEAE2;
+	color: #582707;
+    font-family: 'Barlow Semi Condensed';
+}
+
+
+.colorOne {  
+    background-color: #582707;
+}
+.colorTwo {
+    color: #FF4B3E;
+    background-color: #972D07;
+}
+.colorThree{   
+    background-color: #FFFFFF;
+}
+
+
+/*  These are the Navigation Links in the bar:  'Our Trainers,' "the Gym," etc  */
+#navigation a:link, a:visited {
+    background-color: #972D07;
+    color: #FFB20F;
+    margin: 5px;
+    padding: 4px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#navigation a:hover, a:active {
+	background-color: red;
+}
+
+
+/* Code for non-navigation links on the page  */	
+a:link, a:visited {
+    font-size: 14px;
+    background-color: #972D07;
+    color: #FFB20F;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: red;
+}
+
+	
+/* for "Metropolis Gym" */
+.logo {
+    letter-spacing: 5px;
+    font-family: 'Kaushan Script';
+    font-size: 40px;
+    color: #FFE548;
+}
+
+/*  for "Reach your Potential Here"   */	
+.tagline {
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed';
+}
+	
+.bodyText {
+    /*font-family: 'Josefin Slab';*/
+    font-family: 'Barlow Semi Condensed';
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+/*  for "A Workout Plan Just for You"   */
+.pageName {
+    padding-left: 20px;
+    font-size: 30px;
+    font-family: 'Kaushan Script';
+	       }
+							
